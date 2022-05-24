@@ -6,8 +6,6 @@ import {
   getOrCreateAssociatedTokenAccount,
   transfer,
   TOKEN_PROGRAM_ID,
-  ui_amount_to_amount,
-  amount_to_ui_amount
 } from "@solana/spl-token";
 
 describe("xdapp-cpi", () => {
@@ -15,12 +13,6 @@ describe("xdapp-cpi", () => {
   anchor.setProvider(anchor.AnchorProvider.env());
 
   const program = anchor.workspace.XdappCpi as Program<XdappCpi>;
-
-  it("Is initialized!", async () => {
-    // Add your test here.
-    const tx = await program.methods.initialize().rpc();
-    console.log("Your transaction signature", tx);
-  });
 
   it("Testing order to Raydium", async () => {
     // SOL-USDC
